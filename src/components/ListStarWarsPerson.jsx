@@ -8,20 +8,30 @@ class ListStarWarsPerson extends Component {
     return (
       <div>
         <button onClick={this.props.onQueryPeople}>Query SW people</button>
-        <div className="Results">
+        <div className="results">
           Results:
           <ul>
             {/* itt csak megjelenítjük a kapott adatokat, ha vannak */}
             {this.props.persons.length !== 0
               ? this.props.persons.map(person => (
                   <li key={person.name}>
-                    <b>Name: </b> {person.name} &emsp;
-                    <b>Height: </b> {person.height}&emsp;
-                    <b>Mass: </b>
-                    {person.mass} &emsp;
-                    <b>Hair color: </b>
-                    {person.hair_color}&emsp;
-                    <b>Birth year: </b> {person.birth_year}
+                    <div className="info">
+                      <b>Name:</b> {person.name}
+                    </div>
+                    <div className="info">
+                      <b>Height:</b> {person.height}
+                    </div>
+                    <div className="info">
+                      <b>Mass:</b>
+                      {person.mass}
+                    </div>
+                    <div className="info">
+                      <b>Hair color: </b>
+                      {person.hair_color}
+                    </div>
+                    <div className="info">
+                      <b>Birth year: </b> {person.birth_year}
+                    </div>
                   </li>
                 ))
               : null}
